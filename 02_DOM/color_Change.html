@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;box-sizing: border-box;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: rgb(250, 57, 57);
+            font-size: 24px;
+        }
+        nav ul li{
+            list-style: none;
+        }
+        nav ul{
+            display: flex;
+            justify-content: space-around
+        }
+        nav{
+            background-color: rgb(117, 160, 240);
+            padding: 10px;
+        }
+        h1{
+            text-align: center;
+        }
+        .color_box{
+            display: flex;
+            margin-top: 50px;
+            justify-content: center;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+        }
+        .box1{
+            background-color: black;
+        }
+        
+        .box2{
+            background-color: yellow;
+        }
+        
+        .box3{
+            background-color: green;
+        }
+        
+        .box4{
+            background-color: blue;
+        }
+        
+        .box5{
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <h1>COLOR SCHEME PICKER</h1>
+        <div class="color_box">
+            <div class="box box1" id="black"></div>
+            <div class="box box2" id="yellow"></div>
+            <div class="box box3" id="green"></div>
+            <div class="box box4" id="blue"></div>
+            <div class="box box5" id="purple"></div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <h1>Try clicking one of the above colors <br> to change the color of the background</h1>
+    </div>
+
+
+    <script>
+        const boxes = document.querySelectorAll(".box");
+        const body = document.querySelector("body");
+
+        boxes.forEach((box)=>{
+            // console.log(box);
+            box.addEventListener('click', (e)=>{
+                console.log(e);
+                console.log(e.target);
+
+                if(e.target.id)
+                {
+                    body.style.backgroundColor = e.target.id;
+                }
+            })
+        })
+    </script>
+</body>
+</html>
