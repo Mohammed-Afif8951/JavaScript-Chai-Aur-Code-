@@ -57,6 +57,23 @@
         .box5{
             background-color: purple;
         }
+        .clear{
+            width: 150px;
+            height: 70px;
+            background-color: rgb(6, 132, 206);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            position: relative;
+            left: 40%;
+            margin-top: 20px;
+        }
+        .clear:hover{
+            cursor: pointer;
+            background-color: rgb(3, 97, 151);
+        }
     </style>
 </head>
 <body>
@@ -83,12 +100,14 @@
         <br>
         <br>
         <h1>Try clicking one of the above colors <br> to change the color of the background</h1>
+        <div class="clear" id="white"><p>Reset Default</p></div>
     </div>
 
 
     <script>
         const boxes = document.querySelectorAll(".box");
         const body = document.querySelector("body");
+        const reset = document.querySelector('.clear');
 
         boxes.forEach((box)=>{
             // console.log(box);
@@ -102,6 +121,11 @@
                 }
             })
         })
+
+        reset.addEventListener('click', (e)=>{
+            body.style.backgroundColor = e.target.id;
+        })
+        
     </script>
 </body>
 </html>
